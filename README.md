@@ -1,2 +1,0 @@
-"# SechungBot" 
-"# SechunBot" 
