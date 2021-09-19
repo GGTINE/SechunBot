@@ -251,7 +251,7 @@ async def 노래끄기(ctx):
     else:
         await ctx.send("지금 노래가 재생되지 않네요.")
 
-@app.command()
+@bot.command()
 async def 반복재생(ctx, *, msg):
       
     try:
