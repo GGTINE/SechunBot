@@ -506,33 +506,3 @@ async def 즐겨찾기삭제(ctx, *, number):
                      await ctx.send("입력한 숫자가 잘못되었거나 즐겨찾기의 범위를 초과하였습니다.")
             else:
                 await ctx.send("즐겨찾기에 노래가 없어서 지울 수 없어요!")
-
-@bot.event
-async def on_reaction_add(reaction, users):
-    if users.bot == 1:
-        pass
-    else:
-        try:
-            await Flist.delete()
-        except:
-            pass
-        else:
-            if str(reaction.emoji) == '\U0001F4E5':
-                await reaction.message.channel.send("잠시만 기다려주세요. (즐겨찾기 갯수가 많으면 지연될 수 있습니다.)")
-                print(users.name)
-                for i in range(len(userFlist)):
-                    if userFlist[i][0] == str(users.name):
-                        for j in range(1, len(userFlist[i])):
-                            try:
-                                driver.close()
-                            except:
-                                print("NOT CLOSED")
-
-                            user.append(userFlist[i][j])
-                            result, URLTEST = title(userFlist[i][j])
-                            song_queue.append(URLTEST)
-                            await reaction.message.channel.send(userFlist[i][j] + "를 재생목록에 추가했어요!")
-            elif str(reaction.emoji) == '\U0001F4DD':
-                await reaction.message.channel.send("플레이리스트가 나오면 생길 기능이랍니다. 추후에 올릴 영상을 기다려주세요!")
-    
-bot.run('ODg5MTY4NjcyMTUxNzI4MTc4.YUdU2w.rz0U4LawqGdRRaMMWFdQlCfumBc')
