@@ -507,4 +507,4 @@ async def 즐겨찾기삭제(ctx, *, number):
             else:
                 await ctx.send("즐겨찾기에 노래가 없어서 지울 수 없어요!")
 
-bot.run('ODg5MTY4NjcyMTUxNzI4MTc4.YUdU2w.rz0U4LawqGdRRaMMWFdQlCfumBc')
+bot.run('your token')
